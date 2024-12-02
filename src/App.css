@@ -1,38 +1,143 @@
+html, body {
+  height: 100%;
+  margin: 0; /* Remove default margin */
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* TodoWrapper Styles */
+.TodoWrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 8, 61);
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content-container {
+  width: 100%;
+  max-width: 600px; /* Adjust to fit the design */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px; /* Add space between TodoForm and TodoList */
+}
+
+.TodoForm {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between input and button */
+}
+
+.todo-input {
+  flex: 1; /* Make input take up remaining space */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(153, 150, 150);
+}
+
+.todo-btn {
+  padding: 12px;
+  background-color: #1179b6;
+  border: none;
+  border-radius: 4px;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-btn:hover {
+  background-color: rgb(20, 20, 80);
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between todo items */
+}
+
+.Todo {
+  width: 100%;
+  max-width: 600px; /* Limit width to prevent overflow */
+  background-color: #1179b6;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: #fff;
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+.name {
+  margin: 0;
+  cursor:pointer;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.icon .fa-trash:hover {
+  color: red;
+}
+
+
+.search-results {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px; /* Ensure it doesn't overflow */
+}
+
+.search-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.search-item:last-child {
+  border-bottom: none;
+}
+
+.search-item:hover {
+  background-color: #f0f0f0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.undo-btn {
+  background-color: #f0ad4e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.undo-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
